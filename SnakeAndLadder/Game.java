@@ -32,18 +32,19 @@ public class Game {
         while (winner==null) {
             Player playerTurn=findPlayerTurn();
             
-            
             int playerTurnPositon=playerTurn.currentPositon;
             System.out.println("Current player is: "+playerTurn.id+" and current position is: "+playerTurn.currentPositon);
 
             int score=dice.roll();
+            System.out.println(score);
 
             int newPosition=playerTurnPositon+score;
             newPosition=checkJump(newPosition);
+            playerTurn.currentPositon=newPosition;
 
             System.out.println("Current player is: "+playerTurn.id+" and new position is: "+playerTurn.currentPositon);
 
-            if (newPosition==board.cells.length*board.cells.length) {
+            if (newPosition==board.cells.length*board.cells.length-1) {
                 winner=playerTurn;
             }
         }
@@ -58,7 +59,7 @@ public class Game {
     }
 
     int checkJump(int position) {
-        if (position > board.cells.length*board.cells.length)
+        if (position > board.cells.length*board.cells.length-1)
             return position;
 
         Cell cell=board.getCell(position);
