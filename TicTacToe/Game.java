@@ -40,13 +40,13 @@ public class Game {
 
             System.out.println("Current player is: "+currentPlayer.name+". Enter the row, col: ");
             Scanner sc=new Scanner(System.in);
-            String[] input=sc.next().split(",");
+            String[] input=sc.nextLine().split(",");
             int row=Integer.parseInt(input[0]);
             int col=Integer.parseInt(input[1]);
 
             boolean addingPiece=board.addPiece(row, col, currentPlayer.playingPiece);
             if (!addingPiece) {
-                System.out.println("Enter available row and col");
+                System.out.println("Incorrect positon chosen. Try again...");
                 playersList.addFirst(currentPlayer);
                 continue;
             }
