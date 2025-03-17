@@ -54,8 +54,10 @@ public class Game {
             playersList.addLast(currentPlayer);;
             winner=checkIsWinnerPossible(row,col,currentPlayer.playingPiece);
 
-            if (winner)
+            if (winner) {
+                board.printBoard();
                 return currentPlayer.name;
+            }
         }
 
         return "tie";
@@ -94,7 +96,7 @@ public class Game {
         //anti diagonal check
         for (int i=0,j=board.size-1;i<board.size && j>=0;i++,j--) {
             if (board.board[i][j]==null || board.board[i][j]!=playingPiece) {
-                diagCheck=false;
+                antiDiagCheck=false;
                 break;
             }
         }
