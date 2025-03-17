@@ -6,7 +6,8 @@
 Run the following command inside the project root:
 
 ```sh
-javac -d . src/package_name/*.java
+cd LowLevelDesign
+javac -d . package_name/*.java
 ```
 
 ### **2️⃣ Run the Main Java file**
