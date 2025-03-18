@@ -5,7 +5,7 @@ public class TheatreController {
     Map<City,List<Theatre>> theatresInCity;
     List<Theatre> allTheatres;
 
-    public void TheatreController() {
+    public TheatreController() {
         theatresInCity=new HashMap<>();
         allTheatres=new ArrayList<>();
     }
