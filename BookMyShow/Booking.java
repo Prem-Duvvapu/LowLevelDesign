@@ -23,12 +23,12 @@ public class Booking {
         this.show=show;
     }
 
-    public List<Integer> getSeatIds() {
-        return seatIds;
+    public List<Seat> getBookedSeats() {
+        return bookedSeats;
     }
 
-    public void setSeatIds(List<Integer> seatIds) {
-        this.seatIds=seatIds;
+    public void setBookedSeats(List<Seat> bookedSeats) {
+        this.bookedSeats=bookedSeats;
     }
 
     public Payment getPayment() {

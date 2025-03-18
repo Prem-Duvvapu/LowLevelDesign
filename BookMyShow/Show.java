@@ -40,4 +40,20 @@ public class Show {
     public void setStartTime(String startTime) {
         this.startTime=startTime;
     }
+
+    public List<Seat> getSeatsList() {
+        return seatsList;
+    }
+
+    public void setSeatsList(List<Seat> seatsList) {
+        this.seatsList=seatsList;
+    }
+
+    public List<Integer> getBookingIds() {
+        return bookingIds;
+    }
+
+    public void setBookingIds(List<Integer> bookingIds) {
+        this.bookingIds=bookingIds;
+    }
 }
