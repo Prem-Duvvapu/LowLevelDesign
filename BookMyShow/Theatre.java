@@ -51,7 +51,7 @@ public class Theatre {
         return screensList;
     }
 
-    public void setScreensList(List<Screen> screenList) {
+    public void setScreensList(List<Screen> screensList) {
         this.screensList=screensList;
     }
 
@@ -59,7 +59,7 @@ public class Theatre {
         return showsList;
     }
 
-    public void getShowsList(List<Show> showsList) {
+    public void setShowsList(List<Show> showsList) {
         this.showsList=showsList;
     }
 }

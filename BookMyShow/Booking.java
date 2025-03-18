@@ -4,7 +4,7 @@ import java.util.*;
 public class Booking {
     int id;
     Show show;
-    List<Integer> seatIds;
+    List<Seat> bookedSeats;
     Payment payment;
 
     public int getId() {
