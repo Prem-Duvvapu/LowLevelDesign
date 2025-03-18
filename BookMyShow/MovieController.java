@@ -22,6 +22,15 @@ public class MovieController {
         return moviesInCity.get(city);
     }
 
+    public Movie getMovieByName(String movieName) {
+        for (Movie m: allMovies) {
+            if (m.getName().equals(movieName))
+                return m;
+        }
+
+        return null;
+    }
+
     public List<Movie> getAllMovies() {
         return allMovies;
     }
