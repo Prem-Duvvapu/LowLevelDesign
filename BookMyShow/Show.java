@@ -6,8 +6,8 @@ public class Show {
     Movie movie;
     Screen screen;
     String startTime;
-    List<Seat> seatsList;
-    List<Integer> bookingIds;
+    List<Seat> seatsList=new ArrayList<>();
+    List<Integer> bookingIds=new ArrayList<>();
 
     public int getId() {
         return id;

@@ -48,7 +48,7 @@ public class BookMyTicket {
         //5. Select the seat
         int interestedSeatNumber=30;
 
-        List<Integer> bookedIds=interestedShow.bookingIds;
+        List<Integer> bookedIds=interestedShow.getBookingIds();
 
         if (!bookedIds.contains(interestedSeatNumber)) {
             bookedIds.add(interestedSeatNumber);
@@ -62,8 +62,8 @@ public class BookMyTicket {
                 }
             }
 
-            booking.bookedSeats=bookingSeats;
-            interestedShow.bookingIds=bookedIds;
+            booking.setBookedSeats(bookingSeats);
+            interestedShow.setBookingIds(bookedIds);
         } else {
             System.out.println("Seat Already Booked. Please try again...");
             return;
@@ -81,8 +81,8 @@ public class BookMyTicket {
         List<Screen> inoxTheatreScreens=new ArrayList<>();
         inoxTheatreScreens.add(createScreen(1));
         List<Show> inoxTheatreShows=new ArrayList<>();
-        Show inoxMorningShow=createShow(1,avengers,inoxTheatreScreens.get(0),"9AM");
-        Show inoxEveningShow=createShow(2,avengers,inoxTheatreScreens.get(0),"6PM");
+        Show inoxMorningShow=createShow(1,bahubali,inoxTheatreScreens.get(0),"9AM");
+        Show inoxEveningShow=createShow(2,bahubali,inoxTheatreScreens.get(0),"6PM");
         inoxTheatreShows.add(inoxMorningShow);
         inoxTheatreShows.add(inoxEveningShow);
         inoxTheatre.setShowsList(inoxTheatreShows);
@@ -92,8 +92,8 @@ public class BookMyTicket {
         List<Screen> pvrTheatreScreens=new ArrayList<>();
         pvrTheatreScreens.add(createScreen(2));
         List<Show> pvrTheatreShows=new ArrayList<>();
-        Show pvrMorningShow=createShow(3,bahubali,pvrTheatreScreens.get(0),"9AM");
-        Show pvrEveningShow=createShow(4,bahubali,pvrTheatreScreens.get(0),"6PM");
+        Show pvrMorningShow=createShow(3,avengers,pvrTheatreScreens.get(0),"9AM");
+        Show pvrEveningShow=createShow(4,avengers,pvrTheatreScreens.get(0),"6PM");
         pvrTheatreShows.add(pvrMorningShow);
         pvrTheatreShows.add(pvrEveningShow);
         pvrTheatre.setShowsList(pvrTheatreShows);
