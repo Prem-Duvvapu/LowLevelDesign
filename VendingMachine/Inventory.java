@@ -55,4 +55,8 @@ public class Inventory {
             }
         }
     }
+
+    ItemShelf[] getInventory() {
+        return inventory;
+    }
 }

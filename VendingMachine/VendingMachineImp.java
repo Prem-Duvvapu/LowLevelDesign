@@ -9,7 +9,7 @@ public class VendingMachineImp {
 
     VendingMachineImp() {
         machineState=new IdleState();
-        inventory=new Inventory();
+        inventory=new Inventory(10);
         coinsList=new ArrayList<>();
     }
 
