@@ -35,7 +35,7 @@ public class SelectionState implements VendingMachineState {
             getFullRefund(machine);
             throw new Exception("Insufficient Amount...");
         } else {
-            int remainingAmount=item.getPrice()-amountPaidByUser;
+            int remainingAmount=amountPaidByUser-item.getPrice();
             if (remainingAmount>0)
                 getChange(remainingAmount);
             machine.setVendingMachineState(new DispenseState(machine,productCode));
@@ -45,7 +45,7 @@ public class SelectionState implements VendingMachineState {
     @Override
     public int getChange(int extraMoney) throws Exception {
         //Generally this should be sent to tray
-        System.out.println("The change is returned...");
+        System.out.println("The change "+extraMoney+" is returned...");
         return extraMoney;
     }
 

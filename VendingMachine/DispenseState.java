@@ -3,7 +3,7 @@ package VendingMachine;
 import java.util.List;
 
 public class DispenseState implements VendingMachineState {
-    DispenseState(VendingMachineImp machine, int productCode) {
+    DispenseState(VendingMachineImp machine, int productCode) throws Exception{
         System.out.println("The product is in dispense state...");
         dispenseProduct(machine, productCode);
     }

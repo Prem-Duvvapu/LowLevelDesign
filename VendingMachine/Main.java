@@ -23,7 +23,7 @@ public class Main {
             state.clickOnToStartProductCodeButton(machineImp);
 
             state=machineImp.getVendingMachineState();
-            state.enterProductCode(machineImp,103);
+            state.enterProductCode(machineImp,109);
 
             displayInventory(machineImp);
         } catch(Exception e) {
@@ -33,9 +33,10 @@ public class Main {
 
     public static void fillUpInventory(VendingMachineImp machineImp) {
         ItemShelf[] slots=machineImp.getInventory().getInventory();
-        Item newItem=new Item();
 
         for (int i=0;i<slots.length;i++) {
+            Item newItem=new Item();
+
             if (i>=0 && i<3) {
                 newItem.setItemType(ItemType.Coke);
                 newItem.setPrice(25);

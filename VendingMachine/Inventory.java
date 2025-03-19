@@ -18,6 +18,7 @@ public class Inventory {
             itemShelf.setIsSoldOut(true);
 
             inventory[i]=itemShelf;
+            startCode++;
         }
     }
 
