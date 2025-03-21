@@ -1,7 +1,7 @@
 package ATMLLD;
 
 public class ATM {
-    ATM atmOject=new ATM();
+    private static ATM atmObject = new ATM();
 
     ATMState state;
     int ATMBalance;
@@ -17,9 +17,9 @@ public class ATM {
         this.state=state;
     }
 
-    ATM getATMObject() {
-        atmOject.setATMState(new IdleState());
-        return atmOject;
+    static ATM getATMObject() {
+        atmObject.setATMState(new IdleState());
+        return atmObject;
     }
 
     int getATMBalance() {

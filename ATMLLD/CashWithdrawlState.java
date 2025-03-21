@@ -18,9 +18,9 @@ public class CashWithdrawlState extends ATMState {
             atm.deductATMBalance(withdrawAmount);
 
             //Using Chain of Responsibility
-            CashWithdrawProcessor processor=new TwoThousandWithdrawProcessort(new FiveHundredWithdrawProcessor(new OneHundredProcessort()));
+            CashWithdrawProcessor processor=new TwoThousandWithdrawProcessor(new FiveHundredWithdrawProcessor(new OneHundredWithdrawProcessor(null)));
 
-            processort.withdraw(atm,withdrawAmount);
+            processor.withdraw(atm,withdrawAmount);
             exit(atm);
         }
     }

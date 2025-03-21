@@ -10,23 +10,31 @@ public class ATMRoom {
 
        room.atm.printATMBalance();
 
-       room.atm.getATMState().insertCard(room.atm,room.user.card);
-       room.atm.getATMState().authenticatePin(room.atm, room.user.card, "1234");
-       room.atm.getATMState().selectOperation(room.atm, room.user.card, TransactionType.CASH_WITHDRAWL);
-       room.atm.getATMState().cashWithdrawl(room.atm, room.user.card, 3300);
+       ATMState state=room.atm.getATMState();
+       state.insertCard(room.atm,room.user.card);
+
+       state=room.atm.getATMState();
+       state.authenticatePin(room.atm, room.user.card, "1234");
+
+       state=room.atm.getATMState();
+       state.selectOperation(room.atm, room.user.card, TransactionType.CASH_WITHDRAWL);
+
+       state=room.atm.getATMState();
+       state.cashWithdrawl(room.atm, room.user.card, 2300);
         
        room.atm.printATMBalance();
     }
 
     void initialize() {
         atm=new ATM();
+        atm.setATMState(new IdleState());
         atm.setATMBalance(5000,1,  4, 10);
 
         this.user=createUser();
     }
 
     User createUser() {
-        User user=new User().
+        User user=new User();
         user.setCard(createCard());
 
         return user;
