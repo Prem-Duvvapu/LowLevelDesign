@@ -1,13 +1,16 @@
 package SplitwiseLLD;
 import java.util.*;
+import SplitwiseLLD.UserExpenseBalanceSheet;
+import SplitwiseLLD.User.User;
+import SplitwiseLLD.Expense.Split.*;
 
 public class BalanceSheetController {
-    public void updateUserExpenseBalanceSheet(User expensePaidBy, List<Split> splist,double totalExpenseAmount) {
+    public void updateUserExpenseBalanceSheet(User expensePaidBy, List<Split> splits,double totalExpenseAmount) {
         UserExpenseBalanceSheet paidByUserExpenseSheet=expensePaidBy.userExpenseBalanceSheet;
         paidByUserExpenseSheet.totalPayment=paidByUserExpenseSheet.totalPayment+totalExpenseAmount;
 
         for (Split split: splits) {
-            User userOwe=split.getUser();
+            User userOwe=split.user;
             UserExpenseBalanceSheet oweUserExpenseSheet=userOwe.userExpenseBalanceSheet;
             double oweAmount=split.amountOwe;
 

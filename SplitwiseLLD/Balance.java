@@ -1,6 +1,6 @@
 package SplitwiseLLD;
 
 public class Balance {
-    double amountOwe;
-    double amountGetBack;
+    public double amountOwe;
+    public double amountGetBack;
 }

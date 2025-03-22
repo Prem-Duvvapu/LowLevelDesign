@@ -1,7 +1,10 @@
 package SplitwiseLLD.Expense;
 
-import SplitwiseLLD.BalanceSheetController;
+import SplitwiseLLD.*;
 import SplitwiseLLD.Expense.Split.ExpenseSplit;
+import SplitwiseLLD.Expense.Split.Split;
+import SplitwiseLLD.User.User;
+
 import java.util.List;
 
 public class ExpenseController {
@@ -17,7 +20,7 @@ public class ExpenseController {
         expenseSplit.validateSplitRequest(splitList, expenseAmount);
     
         Expense expense=new Expense(expenseId, description, expenseAmount, paidByUser, splitType, splitList);
-        balanceSheetController.updateUserExpenseBalanceSheet(paidByUser,expenseAmount);
+        balanceSheetController.updateUserExpenseBalanceSheet(paidByUser,splitList,expenseAmount);
 
         return expense;
     }

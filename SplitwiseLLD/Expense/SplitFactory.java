@@ -1,4 +1,5 @@
 package SplitwiseLLD.Expense;
+import SplitwiseLLD.Expense.Split.*;
 
 public class SplitFactory {
     public static ExpenseSplit getSplitObject(ExpenseSplitType splitType) {

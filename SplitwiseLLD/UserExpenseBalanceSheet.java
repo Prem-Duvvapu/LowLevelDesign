@@ -2,11 +2,11 @@ package SplitwiseLLD;
 import java.util.*;
 
 public class UserExpenseBalanceSheet {
-    Map<String,Balance> userVsBalance;
-    double totalYourExpense;
-    double totalPayment;
-    double totalYouOwe;
-    double totalYouGetBack;
+    public Map<String,Balance> userVsBalance;
+    public double totalYourExpense;
+    public double totalPayment;
+    public double totalYouOwe;
+    public double totalYouGetBack;
 
     public UserExpenseBalanceSheet() {
         userVsBalance=new HashMap<>();

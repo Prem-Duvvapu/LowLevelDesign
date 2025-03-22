@@ -1,6 +1,8 @@
 package SplitwiseLLD.Group;
 import java.util.*;
 
+import SplitwiseLLD.User.*;
+
 public class GroupController {
     List<Group> groupList;
 

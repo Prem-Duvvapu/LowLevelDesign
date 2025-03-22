@@ -9,7 +9,7 @@ public class Expense {
     String expenseId;
     String description;
     double expenseAmount;
-    String paidByUser;
+    User paidByUser;
     ExpenseSplitType splitType;
     List<Split> splitDetails=new ArrayList<>();
 

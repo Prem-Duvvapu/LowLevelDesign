@@ -3,9 +3,9 @@ package SplitwiseLLD.User;
 import java.util.*;
 
 public class UserController {
-    List<User> userList;
+    public List<User> userList;
 
-    UserController() {
+    public UserController() {
         userList=new ArrayList<>();
     }
 

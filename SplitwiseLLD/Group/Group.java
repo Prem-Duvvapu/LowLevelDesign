@@ -2,15 +2,16 @@ package SplitwiseLLD.Group;
 
 import SplitwiseLLD.Expense.*;
 import SplitwiseLLD.User.*;
+import SplitwiseLLD.Expense.Split.*;
 
 import java.util.*;
 
 public class Group {
-    String groupId;
-    String groupName;
-    List<User> groupMembers;
-    List<Expense> expenseList;
-    ExpenseController expenseController;
+    public String groupId;
+    public String groupName;
+    public List<User> groupMembers;
+    public List<Expense> expenseList;
+    public ExpenseController expenseController;
 
     Group() {
         groupMembers=new ArrayList<>();
