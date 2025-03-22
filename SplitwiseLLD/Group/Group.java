@@ -1,8 +1,7 @@
 package SplitwiseLLD.Group;
 
-import SplitwiseLLD.Expense.Expense;
-import SplitwiseLLD.Expense.ExpenseController;
-import SplitwiseLLD.Expense.ExpenseSplitType;
+import SplitwiseLLD.Expense.*;
+import SplitwiseLLD.User.*;
 
 import java.util.*;
 
@@ -16,11 +15,11 @@ public class Group {
     Group() {
         groupMembers=new ArrayList<>();
         expenseList=new ArrayList<>();
-        expenseController=new ArrayList<>();
+        expenseController=new ExpenseController();
     }
 
     public Expense createExpense(String expenseId,String description,double expenseAmount,User paidByUser,ExpenseSplitType splitType,List<Split> splitList) {
-        Expense expense=new Expense(expenseId, description, expenseAmount, user, splitType, splitList);
+        Expense expense=new Expense(expenseId, description, expenseAmount, paidByUser, splitType, splitList);
         expenseList.add(expense);
         return expense;
     }

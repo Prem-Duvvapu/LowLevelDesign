@@ -1,6 +1,8 @@
 package SplitwiseLLD.Expense;
 
-import SplitwiseLLD.Expense.Split.Split;
+import SplitwiseLLD.Expense.*;
+import SplitwiseLLD.Expense.Split.*;
+import SplitwiseLLD.User.*;
 import java.util.*;
 
 public class Expense {
