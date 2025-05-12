@@ -7,11 +7,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Main MainObj=new Main();
+        Main mainObj=new Main();
 
         //1. create warehouses in the system
         List<Warehouse> warehouseList=new ArrayList<>();
-//        warehouseList.add(mainOb)
+        warehouseList.add(mainObj.addWarehouseAndItsInventory());
+
+        //2. create users in the system
+        List<User> userList=new ArrayList<>();
+        userList.add(mainObj.createUser());
+
+        //3. feed the system with initial informations
+        ProductDeliverySystem productDeliverySystem=new ProductDeliverySystem(userList,warehouseList);
+
+        mainObj.runDeliveryFlow(productDeliverySystem,3);
     }
 
     private Warehouse addWarehouseAndItsInventory() {
@@ -54,9 +63,11 @@ public class Main {
     private void runDeliveryFlow(ProductDeliverySystem productDeliverySystem,int userId) {
         //1. Get the user object
         User user= productDeliverySystem.getUser(userId);
+        System.out.println("1 -> Got the user");
 
         //2. Get warehouse based on strategy
         Warehouse warehouse= productDeliverySystem.getWarehouse(new NearestWarehouseSelectionStrategy());
+        System.out.println("2 -> Got the warehouse");
 
         //3. get all the inventory to show the user
         Inventory inventory=productDeliverySystem.getInventory(warehouse);
@@ -66,14 +77,18 @@ public class Main {
             if (productCategory.categoryName.equals("Sprite Cool Drink"))
                     productCategoryIWantToOrder=productCategory;
         }
+        System.out.println("3 -> Got the inventory and user selected the productcategory and count");
 
         //4. add product to the cart
         productDeliverySystem.addProductToCart(user,productCategoryIWantToOrder,2);
+        System.out.println("4 -> user selected productcategory added to cart");
 
         //5. place order
         Order order=productDeliverySystem.placeOrder(user,warehouse);
+        System.out.println("5 -> user placed the order");
 
         //6. checkout
         productDeliverySystem.checkout(order);
+        System.out.println("6 -> user checkout");
     }
 }
