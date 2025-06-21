@@ -15,6 +15,42 @@ public class Restaurant {
         menu=new ArrayList<>();
     }
 
+    public void addMenuItem(MenuItem item) {
+        menu.add(item);
+    }
+
+    public void removeMenuItem(MenuItem item) {
+        menu.remove(item);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public List<MenuItem> getMenu() {
+        return menu;
+    }
+
+    public void setMenu(List<MenuItem> menu) {
+        this.menu = menu;
+    }
+
     
 }
 

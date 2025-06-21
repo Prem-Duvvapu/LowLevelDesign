@@ -5,13 +5,13 @@ import java.util.UUID;
 public class DeliveryAgent {
     public final String id;
     private String name;
-    private String phone;
+    private String phoneNum;
     private boolean available;
 
-    public DeliveryAgent(String name, String phone) {
+    public DeliveryAgent(String name, String phoneNum) {
         this.id=UUID.randomUUID().toString();
         this.name=name;
-        this.phone=phone;
+        this.phoneNum=phoneNum;
         this.available=true;
     }
 
