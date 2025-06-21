@@ -99,5 +99,9 @@ public class Answer implements Votable, Commentable {
         this.votes = votes;
     }
 
+    public int getId() {
+        return id;
+    }
+
 
 }

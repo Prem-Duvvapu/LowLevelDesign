@@ -66,6 +66,10 @@ public class Question implements Votable, Commentable {
         return (int)(System.currentTimeMillis()%Integer.MAX_VALUE);
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
