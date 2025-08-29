@@ -3,17 +3,18 @@ import java.util.*;
 
 public class Directory implements FileSystem {
     String directoryName;
-    List<FileSystem> files=new ArrayList<>();
+    List<FileSystem> fileSystemList=new ArrayList<>();
 
-    Directory(String directoryName,List<FileSystem> files) {
+    Directory(String directoryName,List<FileSystem> fileSystemList) {
         this.directoryName=directoryName;
-        this.files=files;
+        this.fileSystemList=fileSystemList;
     }
 
     public void ls() {
         System.out.println("Directory name is: "+directoryName);
 
-        for (FileSystem file: files)
-            file.ls();
+        for (FileSystem fs: fileSystemList)
+            fs.ls();
     }
 }
+
